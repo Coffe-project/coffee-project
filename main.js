@@ -1,4 +1,5 @@
 "use strict";
+// creates div for each array entry
 function renderCoffee(coffee) {
     var html = '<div class="coffee">';
     // html += '<td>' + coffee.id + '</td>';
@@ -10,6 +11,7 @@ function renderCoffee(coffee) {
     return html;
 }
 
+// takes values from renderCoffee function and creates them into strings
 function renderCoffees(coffees) {
     var html = '';
     for(var i = 0; i <= coffees.length -1; i++) {
@@ -18,6 +20,7 @@ function renderCoffees(coffees) {
     return html;
 }
 
+// creates an array of selected inputs, and creates array based on those inputs
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
@@ -54,13 +57,11 @@ var roastSelection = document.querySelector('#roast-selection');
 var coffeeSearch = document.getElementById('coffeeSearch');
 var textDump = "";
 
+// logs key inputs into a single string called text dump, then compares textDump to each array object name
 function coffeeFind(e){
     textDump += e.key;
     var filteredCoffees = [];
     console.log(e.key);
-    if (e.key === 'Backspace'){
-
-    }
     coffees.forEach(function (coffee) {
         if(coffee.name.includes(textDump)){
             filteredCoffees.push(coffee)
@@ -70,6 +71,8 @@ function coffeeFind(e){
 
 }
 coffeeSearch.addEventListener("keypress", coffeeFind);
+// when backspace it pressed, puts textDump into an array, pops last entry,
+// and then joins back as a string
 coffeeSearch.addEventListener('keyup', function (e) {
     if (e.key === 'Backspace'){
         textDump = textDump.split('');
