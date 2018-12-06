@@ -1,5 +1,4 @@
-"use strict"
-var coffeeSearch = document.getElementById('coffeeSearch');
+"use strict";
 function renderCoffee(coffee) {
     var html = '<div class="coffee">';
     // html += '<td>' + coffee.id + '</td>';
@@ -52,6 +51,20 @@ var coffees = [
 var holdingDiv = document.querySelector('#holder');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
+var coffeeSearch = document.getElementById('coffeeSearch');
+var textDump = "";
+
+function coffeeFind(e){
+    textDump += e.key;
+    var filteredCoffees = [];
+    console.log(e.key)
+    if(coffees.includes(textDump)){
+        filteredCoffees.push(coffee)
+    }
+
+}
+coffeeSearch.addEventListener("keyup", coffeeFind);
+
 
 holdingDiv.innerHTML = renderCoffees(coffees);
 
