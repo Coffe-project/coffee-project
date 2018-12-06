@@ -1,9 +1,35 @@
-table {
-    border-collapse: collapse;
-    margin: 15px 0;
+/*No longer needed, switched from table to divs*/
+
+/*table {*/
+    /*border-collapse: collapse;*/
+    /*margin: 15px 0;*/
+/*}*/
+
+/*td, th {*/
+    /*border: 1px solid black;*/
+    /*padding: 5px 10px;*/
+/*}*/
+
+body {
+    background-image: url("img/wov.png");
+    background-color: saddlebrown;
+    text-align: center;
 }
 
-td, th {
-    border: 1px solid black;
-    padding: 5px 10px;
+h1, span {
+    font-family: 'Mountains of Christmas', cursive;
+}
+
+h3 {
+    font-family: 'Signika', sans-serif;
+}
+
+p {
+    font-family: 'Courgette', cursive;
+    font-size: 20px;
+}
+
+span {
+    font-size: 18px;
+    font-weight: bold;
 }

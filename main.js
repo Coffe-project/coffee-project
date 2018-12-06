@@ -3,12 +3,16 @@
 function renderCoffee(coffee) {
     var html = '<div class="coffee">';
     // html += '<td>' + coffee.id + '</td>';
-    html += '<h5>' + coffee.name + '</h5>';
-    html += '<p>' + coffee.roast + '</p>';
+    html += '<h3>' + coffee.name + '</h3>';
+    html += '<p>' + capitalizeFirstLetter(coffee.roast) + '</p>';
     html += '</div>';
     html +='<br>';
     console.log(html);
     return html;
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 // takes values from renderCoffee function and creates them into strings
@@ -64,7 +68,7 @@ function coffeeFind(e){
     var filteredCoffees = [];
     console.log(e.key);
     coffees.forEach(function (coffee) {
-        if(coffee.name.toLowerCase().includes(textDump)){
+        if(coffee.name.toLowerCase().startsWith(textDump)){
             filteredCoffees.push(coffee)
         }
         holdingDiv.innerHTML=renderCoffees(filteredCoffees);
@@ -79,6 +83,9 @@ coffeeSearch.addEventListener('keyup', function (e) {
         textDump = textDump.split('');
         textDump.pop();
         textDump = textDump.join('');
+        if (textDump === ''){
+            holdingDiv.innerHTML = renderCoffees(coffees);
+        }
     }
 });
 
