@@ -59,11 +59,12 @@ var textDump = "";
 
 // logs key inputs into a single string called text dump, then compares textDump to each array object name
 function coffeeFind(e){
-    textDump += e.key;
+    textDump += e.key.toLowerCase();
+    // textDump += e.key;
     var filteredCoffees = [];
     console.log(e.key);
     coffees.forEach(function (coffee) {
-        if(coffee.name.includes(textDump)){
+        if(coffee.name.toLowerCase().includes(textDump)){
             filteredCoffees.push(coffee)
         }
         holdingDiv.innerHTML=renderCoffees(filteredCoffees);
