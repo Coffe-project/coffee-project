@@ -57,13 +57,26 @@ var textDump = "";
 function coffeeFind(e){
     textDump += e.key;
     var filteredCoffees = [];
-    console.log(e.key)
-    if(coffees.includes(textDump)){
-        filteredCoffees.push(coffee)
+    console.log(e.key);
+    if (e.key === 'Backspace'){
+
     }
+    coffees.forEach(function (coffee) {
+        if(coffee.name.includes(textDump)){
+            filteredCoffees.push(coffee)
+        }
+        holdingDiv.innerHTML=renderCoffees(filteredCoffees);
+    })
 
 }
-coffeeSearch.addEventListener("keyup", coffeeFind);
+coffeeSearch.addEventListener("keypress", coffeeFind);
+coffeeSearch.addEventListener('keyup', function (e) {
+    if (e.key === 'Backspace'){
+        textDump = textDump.split('');
+        textDump.pop();
+        textDump = textDump.join('');
+    }
+});
 
 
 holdingDiv.innerHTML = renderCoffees(coffees);
