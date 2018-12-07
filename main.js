@@ -58,9 +58,23 @@ var coffees = [
 
 var holdingDiv = document.querySelector('#holder');
 var submitButton = document.querySelector('#submit');
+var coffeeSubmit = document.querySelector('#newSubmit');
 var roastSelection = document.querySelector('#roast-selection');
+var newRoast = document.querySelector('#new-roast-selection');
+var coffeeName = document.querySelector('#newCoffeeName');
 var coffeeSearch = document.getElementById('coffeeSearch');
 var textDump = "";
+var i = coffees.length;
+
+function coffeeAdd (){
+    var coffee = {id: 0, name: 'Coffee Name', roast: 'light'};
+    coffee.id = i + 1;
+    coffee.name = coffeeName.value;
+    coffee.roast = newRoast.value;
+    coffees.push(coffee);
+    holdingDiv.innerHTML = renderCoffees(coffees);
+
+}
 
 // logs key inputs into a single string called text dump, then compares textDump to each array object name
 function coffeeFind(e){
@@ -94,3 +108,4 @@ coffeeSearch.addEventListener('keyup', function (e) {
 holdingDiv.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
+coffeeSubmit.addEventListener('click', coffeeAdd);
