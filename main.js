@@ -7,7 +7,6 @@ function renderCoffee(coffee) {
     html += '<p>' + capitalizeFirstLetter(coffee.roast) + '</p>';
     html += '</div>';
     html +='<br>';
-    console.log(html);
     return html;
 }
 
