@@ -53,6 +53,13 @@ ul {
     color: #3a2613;
 
 }
+.jumbotron {
+    background-image: url("img/coffee.jpg");
+    background-size: 100%;
+}
+.jumbotron h1{
+    background-color: rgba(172, 115, 057, 0.5);
+}
 #submit {
     background-color: #ac7339;
     border-color: #3a2613;

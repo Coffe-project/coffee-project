@@ -8,9 +8,11 @@
         <link href="https://fonts.googleapis.com/css?family=Courgette|Dokdo|Mountains+of+Christmas|Signika" rel="stylesheet">
     </head>
     <body>
+        <div class="jumbotron jumbotron-fluid">
+                <h1 class="display-4">Coffee!</h1>
+        </div>
     <div class="container">
-        <h1>Coffee!</h1>
-
+        <div class="container">
         <form>
             <label for="roast-selection"></label>
             <select id="roast-selection">
@@ -27,9 +29,7 @@
         <input type="text" id="coffeeSearch">
         <br>
         <br>
-        <div id="holder">
-
-        </div>
+        <span>Add a New Coffee</span>
         <form>
             <input type="text" name="newCoffeeName" id="newCoffeeName">
             <select id="new-roast-selection">
@@ -39,6 +39,10 @@
             </select>
             <button type="button" class="btn btn-primary btn-sm" id="newSubmit">Add New Coffee</button>
         </form>
+        </div>
+        <div class="card-columns">
+            <div id="holder"></div>
+        </div>
         <!--<table>-->
             <!--<thead>-->
                 <!--<tr>-->
