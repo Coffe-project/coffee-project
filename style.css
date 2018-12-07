@@ -33,8 +33,33 @@ span {
     font-size: 18px;
     font-weight: bold;
 }
+ul {
+    list-style-type: none;
+    background-color: #ac7339;
+    border-color: #3a2613;
+    color: #3a2613;
+}
+.card{
+    padding: 0 !important;
+    min-width: 140px !important;
+    max-width: 140px !important;
 
+}
+.card-header{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #ac7339;
+    border-color: #3a2613;
+    color: #3a2613;
+
+}
 #submit {
+    background-color: #ac7339;
+    border-color: #3a2613;
+    color: #3a2613;
+}
+
+#newSubmit {
     background-color: #ac7339;
     border-color: #3a2613;
     color: #3a2613;
