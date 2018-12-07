@@ -1,10 +1,10 @@
 "use strict";
 // creates div for each array entry
 function renderCoffee(coffee) {
-    var html = '<div class="coffee">';
+    var html = '<div class="coffee card" style="width: 18rem;">';
     // html += '<td>' + coffee.id + '</td>';
-    html += '<h3>' + coffee.name + '</h3>';
-    html += '<p>' + capitalizeFirstLetter(coffee.roast) + '</p>';
+    html += '<div class="card-header">' + coffee.name + '</div>';
+    html += '<ul class="list-group list-group-flush"><li>' + capitalizeFirstLetter(coffee.roast) + '</li></ul>';
     html += '</div>';
     html +='<br>';
     return html;

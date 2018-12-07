@@ -33,3 +33,9 @@ span {
     font-size: 18px;
     font-weight: bold;
 }
+
+#submit {
+    background-color: #ac7339;
+    border-color: #3a2613;
+    color: #3a2613;
+}
